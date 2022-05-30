@@ -1,0 +1,46 @@
+﻿@model WebRauTNT.Models.DoanhThuViewModel
+@using PagedList.Mvc
+@{ ViewBag.Title = "DoanhThu";
+                Layout = "~/Views/Shared/_LayoutAdmin.cshtml"; }
+
+<div id="layoutSidenav_content">
+    <main>
+        <div class="container-fluid px-4">
+            <h2 style=" margin-top:20px;">Tổng doanh thu: @String.Format("{0:0,0}", @Model.Total)</h2>
+            <table class="table table-bordered table-dark">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>
+                            Tháng/năm
+                        </th>
+                        <th>
+                            Doanh thu
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="table-light">
+                    @for (var i = 0; i < Model.ThangNam.Count; i++)
+                    {
+        <tr>
+            <td>
+                @Model.ThangNam[i].Month/@Model.ThangNam[i].Year
+            </td>
+            <td>
+                @String.Format("{0:0,0}", @Model.Result[i])
+            </td>
+        </tr>}
+                </tbody>
+            </table>
+            <div style=" margin-bottom:50px;">
+                <div>
+                    Trang @(Model.ThangNam.PageCount < Model.ThangNam.PageNumber ? 0 : Model.ThangNam.PageNumber) / @Model.ThangNam.PageCount
+                </div>
+                <div class="MenuTrang">
+                    @Html.PagedListPager(Model.ThangNam, page => Url.Action("Index", new { page = page }))
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+

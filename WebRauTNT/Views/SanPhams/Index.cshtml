@@ -1,0 +1,156 @@
+﻿@using PagedList.Mvc;
+@model WebRauTNT.Models.SanPhamViewModel
+
+@{ ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-section set-bg" data-setbg="/Content/img/breadcrumb.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="breadcrumb__text">
+                    <h2>Danh Mục Sản Phẩm</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<body>
+    <section class="product spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-5">
+                    <div class="sidebar">
+                        <div class="sidebar__item">
+                            <h4>Loại sản phẩm</h4>
+                            @{ foreach (var item in Model.LoaiSPs)
+                                {
+                                    <ul>
+                                        <li><a href="#" style="text-decoration:none">@item.TenLoai</a></li>
+                                    </ul> } }
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-7">
+                    <search class="navbar navbar-light bg-light">
+                        <form class="form-inline">
+                            <input class="form-control mr-sm-2" type="search" value="@ViewBag.Keyword" name="searchString" placeholder="Nhập tên sản phẩm cần tìm" aria-label="Search"
+                                   style="width:300px; height:40px; font-size:16px;">
+                            <input type="submit" class="btn btn-success my-2 my-sm-0" value="Tìm kiếm" style="margin-left: 10px; height: 40px; font-size: 16px;" width="50">
+                        </form>
+                    </search>
+                    <div class="filter__item">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-5">
+                                <div class="filter__sort">
+
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                <div class="filter__found">
+                                    <h6><span>@Model.SanPhams.Count()</span> Sản phẩm</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        @if (Model.SanPhams.Count > 0)
+                        {
+                            foreach (var item in Model.SanPhams)
+                            {
+                                <div class="col-lg-4 col-md-6 col-sm-6">
+                                    <div class="product__item">
+                                        <div class="product__item__pic set-bg" data-setbg="@item.Hinh">
+                                            <ul class="product__item__pic__hover">
+                                                <li><a href="@Url.Action("ThemGioHang","GioHang", new { @id = item.MaSP , @strURL = Request.Url.ToString() } )"><i class="fa fa-shopping-cart"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="product__item__text">
+                                            <h4><a href="@Url.Action("Details", "SanPhams", new { @id = item.MaSP})" style="text-decoration:none; color:black">@item.Ten</a></h4>
+                                            <h5>@String.Format("{0:0,0}", @item.Gia) VNĐ</h5>
+                                        </div>
+                                    </div>
+                                </div> }
+                        }
+                        else
+                        {
+                            <div class="text-center">
+                                <h3>Không tìm thấy sản phẩm:  <strong style="color:red">@ViewBag.Keyword</strong></h3>
+                            </div>}
+                        <div>
+                            <div>
+                                Trang @(Model.SanPhams.PageCount < Model.SanPhams.PageNumber ? 0 : Model.SanPhams.PageNumber) / @Model.SanPhams.PageCount
+                            </div>
+                            <div class="product__pagination">
+                                @Html.PagedListPager(Model.SanPhams, page => Url.Action("Index", new { page = page }))
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Messenger Plugin chat Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Plugin chat code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+        var chatbox = document.getElementById('fb-customer-chat');
+        chatbox.setAttribute("page_id", "107187518619137");
+        chatbox.setAttribute("attribution", "install_email");
+        chatbox.setAttribute("attribution_version", "biz_inbox");</script>
+
+    <!-- Your SDK code -->
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                xfbml: true,
+                version: 'v13.0'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+    <script src="/Scripts/jquery.min.js"></script>
+    <script src="/Scripts/rack_hostsomee.js"></script>
+    <script src="/Content/js/jquery-3.3.1.min.js"></script>
+    <script src="/Content/js/bootstrap.min.js"></script>
+    <script src="/Content/js/jquery.nice-select.min.js"></script>
+    <script src="/Content/js/jquery-ui.min.js"></script>
+    <script src="/Content/js/jquery.slicknav.js"></script>
+    <script src="/Content/js/mixitup.min.js"></script>
+    <script src="/Content/js/owl.carousel.min.js"></script>
+    <script src="/Content/js/main.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/Content/bootstrap-3.3.7/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="/Content/js/plugins/owl-carousel/owl.carousel.min.js"></script>
+    <script src="/Content/js/plugins/bootsnav_files/js/bootsnav.js"></script>
+    <script src="/Content/js/plugins/typed.js-master/typed.js-master/dist/typed.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="/Content/js/plugins/Magnific-Popup-master/Magnific-Popup-master/dist/jquery.magnific-popup.js"></script>
+    <script src="/Content/js/main-auth.js"></script>
+    <script>
+        Array.from($('.header__menu ul li a')).forEach(function (item) {
+            if (item.href.split('/')[3] == window.location.href.split('/')[3])
+                item.parentElement.classList.add('active')
+        })</script>
+</body>
+
+</html>

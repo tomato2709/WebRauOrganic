@@ -1,0 +1,58 @@
+﻿@model IEnumerable<WebRauTNT.Models.Giohang>
+@{
+    ViewBag.Title = "DatHang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="col-xs-1" style="margin-left:400px;margin-right:450px;">
+    <div class="checkout__order">
+        <h4>Đơn hàng của bạn</h4>
+
+        <div class="checkout__order__products">Sản phẩm <span>Giá * SL</span></div>
+        @foreach (var item in Model)
+        {
+            <ul>
+                <li>@item.sTenSanPham<span>@item.dGia * @item.iSoLuong</span></li>
+            </ul>
+        }
+        <div class="checkout__order__subtotal">Tổng tiền <span>@ViewBag.TongTien VNĐ</span></div>
+    </div>
+</div>
+
+@using WebRauTNT.Models.LinQ;
+<h2 style="text-align:center;margin-top:20px;color:red;font-weight:bold;">Thông Tin Đặt Hàng</h2>
+@{ AspNetUser kh = (AspNetUser)Session["TaiKhoan"]; }
+
+<table align="center" style="font-size: 15px;">
+    @using (Html.BeginForm())
+    {
+@Html.ValidationSummary(true)
+                <tr style="height:40px">
+                    <td>Họ tên khách hàng: </td>
+                    <td style="font-weight:bold">&emsp; @kh.UserName</td>
+                </tr>
+                                <tr style="height:40px">
+                                    <td>Email: </td>
+                                    <td style="font-weight:bold">&emsp; @kh.Email</td>
+                                </tr>
+                                                                <tr style-"height:40px">
+                                                                    <td>Điện thoại: </td>
+                                                                    <td style="font-weight: bold">&emsp; @kh.PhoneNumber</td>
+                                                                </tr>
+                                                                                <tr style-"height:40px">
+                                                                                    <td>Ngày đặt: </td>
+                                                                                    <td style="font-weight:bold">&emsp; @DateTime.Now.ToShortDateString()</td>
+                                                                                </tr>
+                                                                                                <tr style-"height: 40px">
+                                                                                                    <td>Ngày giao: </td>
+                                                                                                    <td style="font-weight:bold">
+                                                                                                        &emsp;<input type="date" name="NgayGiao" value="@DateTime.Today.ToString("yyyy-MM-dd")" />
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                                <tr style-"height:40px">
+                                                                                                                    <td></td>
+                                                                                                                    <td style="font-weight:bold;">
+                                                                                                                        <br />
+                                                                                                                        <input type="submit" value="Xác nhận" class="primary-btn" />
+                                                                                                                    </td>
+                                                                                                                </tr>}
+</table>

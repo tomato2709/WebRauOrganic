@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "Liên hệ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-section set-bg" data-setbg="/Content/img/breadcrumb.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="breadcrumb__text">
+                    <h2>Liên Hệ Với Chúng Tôi</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
+<!-- Contact Form Begin -->
+<div class="contact-form spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="contact__form__title">
+                    <h2>Hãy đóng góp ý kiến bên dưới cho Shop</h2>
+                </div>
+            </div>
+        </div>
+        <form class="contact-form" id="contactForm" method="POST" action="SubmitContact">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <input type="text" class="form-control input-feild" id="contactEmail" name="Fullname" placeholder="Tên" value="">
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <input type="email" class="form-control input-feild" id="contactEmail" name="Email" placeholder="Email" value="">
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <input type="text" class="form-control input-feild" id="contactEmail" name="Phone" placeholder="Số điện thoại" value="">
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <input type="text" class="form-control input-feild" id="contactEmail" name="Title" placeholder="Tiêu đề liên hệ" value="">
+                </div>
+                <div class="col-lg-12 text-center">
+                    <textarea class="contact-text" name="Detail" placeholder="Nội dung liên hệ"></textarea>
+                    <button type="submit" name="submit" id="sendMessage" class="send-message site-btn">Gửi góp ý</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Contact Form End -->
+<!-- Contact Section Begin -->
+<section class="contact spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-6 text-center">
+                <div class="contact__widget">
+                    <span class="icon_phone"></span>
+                    <h4>Hotline</h4>
+                    <p style="font-size:17px;">+84 374860802</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 text-center">
+                <div class="contact__widget">
+                    <span class="icon_pin_alt"></span>
+                    <h4>Địa Chỉ</h4>
+                    <p style="font-size: 17px;">475A Điện Biên Phủ, P.25,<br />Q. Bình Thạnh, TP.HCM</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 text-center">
+                <div class="contact__widget">
+                    <span class="icon_clock_alt"></span>
+                    <h4>Thời Gian Mở</h4>
+                    <p style="font-size: 17px;">6:00 AM đến 10:00 PM</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 text-center">
+                <div class="contact__widget">
+                    <span class="icon_mail_alt"></span>
+                    <h4>Email</h4>
+                    <p style="font-size: 17px;">tntOrganic@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact Section End -->

@@ -1,0 +1,331 @@
+﻿@model IEnumerable<WebRauTNT.Models.SanPham>
+
+@{ ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml"; 
+ }
+
+<!-- Hero Section Begin body-->
+<section class="hero">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="hero__item set-bg" data-setbg="/Content/img/banner.jpg">
+                    <div class="hero__text">
+                        <span>TNT Organi</span>
+                        <h2>Rau củ quả <br />100% tự nhiên</h2>
+                        <p>Nhận và giao hàng miễn phí đơn hàng trên 300 000Đ</p>
+                        <a href="/Account/Register" class="primary-btn">Đến cửa hàng ngay</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Hero Section End -->
+<!-- Categories Section Begin -->
+<section class="categories">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="categories__item set-bg" data-setbg="/Content/images/daidien/rau.png">
+                    <h5><a href="/SanPhams/Details/5">Rau xanh</a></h5>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="categories__item set-bg" data-setbg="/Content/images/daidien/cu.jpeg">
+                    <h5><a href="/SanPhams/Details/13">Củ tươi</a></h5>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="categories__item set-bg" data-setbg="/Content/images/daidien/raumui.png">
+                    <h5><a href="/SanPhams/Details/19">Rau mùi</a></h5>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="categories__item set-bg" data-setbg="/Content/images/daidien/traicay.jpeg">
+                    <h5><a href="/SanPhams/Details/4">Trái cây</a></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Categories Section End -->
+<!-- Featured Section Begin -->
+<section class="featured" style="margin-top: 75px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <h2>Rau tươi Organic</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row featured__filter">
+            <div class="categories__slider owl-carousel">
+                @foreach (var item in Model)
+                {
+                    if (@item.MaLoai == 1)
+                    {
+    <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+        <div class="featured__item">
+            <div class="featured__item__pic set-bg" data-setbg="@item.Hinh">
+                <ul class="featured__item__pic__hover">
+                    <li>
+                        <a href="@Url.Action("ThemGioHang", "GioHang", new { @iIdSanPham = item.MaSP, @strURL = Request.Url.ToString() })"><i class="fa fa-shopping-cart"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="featured__item__text">
+                <h6><a href="@Url.Action("Details", "SanPhams", new { @id = item.MaSP })">@item.Ten</a></h6>
+                <h5>@String.Format("{0:0,0}", @item.Gia)</h5>
+            </div>
+        </div>
+    </div>}
+}
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <h2>Củ quả Organic</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row featured__filter">
+            <div class="categories__slider owl-carousel">
+                @foreach (var item in Model)
+                {
+                    if (@item.MaLoai == 2)
+                    {
+    <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+        <div class="featured__item">
+            <div class="featured__item__pic set-bg" data-setbg="@item.Hinh">
+                <ul class="featured__item__pic__hover">
+                    <li>
+                        <a href="@Url.Action("ThemGioHang", "GioHang", new { @iIdSanPham = item.MaSP, @strURL = Request.Url.ToString() })"><i class="fa fa-shopping-cart"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="featured__item__text">
+                <h6><a href="@Url.Action("Details", "SanPhams", new { @id = item.MaSP })">@item.Ten</a></h6>
+                <h5>@String.Format("{0:0,0}", @item.Gia)</h5>
+            </div>
+        </div>
+    </div>}
+}
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <h2>Rau Mùi Organic</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row featured__filter">
+            <div class="categories__slider owl-carousel">
+                @foreach (var item in Model)
+                {
+                    if (@item.MaLoai == 3)
+                    {
+    <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+        <div class="featured__item">
+            <div class="featured__item__pic set-bg" data-setbg="@item.Hinh">
+                <ul class="featured__item__pic__hover">
+                    <li>
+                        <a href="@Url.Action("ThemGioHang", "GioHang", new { @iIdSanPham = item.MaSP, @strURL = Request.Url.ToString() })"><i class="fa fa-shopping-cart"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="featured__item__text">
+                <h6><a href="@Url.Action("Details", "SanPhams", new { @id = item.MaSP })">@item.Ten</a></h6>
+                <h5>@String.Format("{0:0,0}", @item.Gia)</h5>
+            </div>
+        </div>
+    </div>}
+}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <h2>Trái cây Organic</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row featured__filter">
+            <div class="categories__slider owl-carousel">
+                @foreach (var item in Model)
+                {
+                    if (@item.MaLoai == 4)
+                    {
+    <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+        <div class="featured__item">
+            <div class="featured__item__pic set-bg" data-setbg="@item.Hinh">
+                <ul class="featured__item__pic__hover">
+                    <li>
+                        <a href="@Url.Action("ThemGioHang", "GioHang", new { @iIdSanPham = item.MaSP, @strURL = Request.Url.ToString() })"><i class="fa fa-shopping-cart"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="featured__item__text">
+                <h6><a href="@Url.Action("Details", "SanPhams", new { @id = item.MaSP })">@item.Ten</a></h6>
+                <h5>@String.Format("{0:0,0}", @item.Gia)</h5>
+            </div>
+        </div>
+    </div>}
+}
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <h2>Các món ăn khác</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row featured__filter">
+            <div class="categories__slider owl-carousel">
+                @foreach (var item in Model)
+                {
+                    if (@item.MaLoai == 5)
+                    {
+    <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+        <div class="featured__item">
+            <div class="featured__item__pic set-bg" data-setbg="@item.Hinh">
+                <ul class="featured__item__pic__hover">
+                    <li>
+                        <a href="@Url.Action("ThemGioHang", "GioHang", new { @iIdSanPham = item.MaSP, @strURL = Request.Url.ToString() })"><i class="fa fa-shopping-cart"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="featured__item__text">
+                <h6><a href="@Url.Action("Details", "SanPhams", new { @id = item.MaSP })">@item.Ten</a></h6>
+                <h5>@String.Format("{0:0,0}", @item.Gia)</h5>
+            </div>
+        </div>
+    </div>}
+}
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Featured Section End -->
+<!-- Banner Begin -->
+<!--
+<div class="banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="banner__pic">
+                    <img src="/Content/images/banner/banner3.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <img src="/Content/images/banner/banner4.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</div>-->
+<!-- Banner End -->
+<!-- Latest Product Section Begin -->
+<section class="latest-product">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="latest-product__text">
+                    <h4>Sản phẩm hot</h4>
+                    <div class="latest-product__slider owl-carousel">
+                        @foreach (var item in Model)
+                        {
+            <div class="latest-prdouct__slider__item">
+                <a href="@Url.Action("Details", "SanPhams", new { @id = item.MaSP })" class="latest-product__item">
+                    <div class="latest-product__item__pic">
+                        <img src="@item.Hinh" alt="">
+                    </div>
+                    <div class="latest-product__item__text">
+                        <h6>@item.Ten</h6>
+                        <span>@String.Format("{0:0,0}", @item.Gia)</span>
+                    </div>
+                </a>
+                <a href="@Url.Action("Details", "SanPhams", new { @id = item.MaSP })" class="latest-product__item">
+                    <div class="latest-product__item__pic">
+                        <img src="@item.Hinh" alt="">
+                    </div>
+                    <div class="latest-product__item__text">
+                        <h6>@item.Ten</h6>
+                        <span>@String.Format("{0:0,0}", @item.Gia)</span>
+                    </div>
+                </a>
+                <a href="@Url.Action("Details", "SanPhams", new { @id = item.MaSP })" class="latest-product__item">
+                    <div class="latest-product__item__pic">
+                        <img src="@item.Hinh" alt="">
+                    </div>
+                    <div class="latest-product__item__text">
+                        <h6>@item.Ten</h6>
+                        <span>@String.Format("{0:0,0}", @item.Gia)</span>
+                    </div>
+                </a>
+            </div>}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="latest-product__text">
+                    <h4>Sản phẩm hot</h4>
+                    <div class="latest-product__slider owl-carousel">
+                        @foreach (var item in Model)
+                        {
+            <div class="latest-prdouct__slider__item">
+                <a href="@Url.Action("Details", "SanPhams", new { @id = item.MaSP })" class="latest-product__item">
+                    <div class="latest-product__item__pic">
+                        <img src="@item.Hinh" alt="">
+                    </div>
+                    <div class="latest-product__item__text">
+                        <h6>@item.Ten</h6>
+                        <span>@String.Format("{0:0,0}", @item.Gia)</span>
+                    </div>
+                </a>
+                <a href="@Url.Action("Details", "SanPhams", new { @id = item.MaSP })" class="latest-product__item">
+                    <div class="latest-product__item__pic">
+                        <img src="@item.Hinh" alt="">
+                    </div>
+                    <div class="latest-product__item__text">
+                        <h6>@item.Ten</h6>
+                        <span>@String.Format("{0:0,0}", @item.Gia)</span>
+                    </div>
+                </a>
+                <a href="@Url.Action("Details", "SanPhams", new { @id = item.MaSP })" class="latest-product__item">
+                    <div class="latest-product__item__pic">
+                        <img src="@item.Hinh" alt="">
+                    </div>
+                    <div class="latest-product__item__text">
+                        <h6>@item.Ten</h6>
+                        <span>@String.Format("{0:0,0}", @item.Gia)</span>
+                    </div>
+                </a>
+            </div>}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
