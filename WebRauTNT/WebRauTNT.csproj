@@ -205,12 +205,14 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BinhLuansController.cs" />
+    <Compile Include="Controllers\ChiTietDonHangController.cs" />
     <Compile Include="Controllers\DonHangController.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoaiSPController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SanPhamsController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -507,9 +509,9 @@
     <Content Include="Template\login\vendor\select2\select2.js" />
     <Content Include="Template\login\vendor\select2\select2.min.css" />
     <Content Include="Template\login\vendor\select2\select2.min.js" />
-    <Content Include="Views\Admin\401.html" />
-    <Content Include="Views\Admin\404.html" />
-    <Content Include="Views\Admin\500.html" />
+    <None Include="Views\Admin\Error401.cshtml" />
+    <None Include="Views\Admin\Error404.cshtml" />
+    <None Include="Views\Admin\Error500.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -668,6 +670,17 @@
     <Content Include="Views\LoaiSP\Delete.cshtml" />
     <Content Include="Views\DonHang\Details.cshtml" />
     <Content Include="Views\DonHang\DoanhThu.cshtml" />
+    <Content Include="Views\ChiTietDonHang\Index.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\BinhLuans\Create.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\ChiTietDonHang\Details.cshtml" />
+    <Content Include="Views\DonHang\Create.cshtml" />
+    <Content Include="Views\DonHang\Edit.cshtml" />
+    <Content Include="Views\DonHang\Delete.cshtml" />
+    <Content Include="Views\Users\Details.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
