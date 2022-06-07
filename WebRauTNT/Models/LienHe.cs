@@ -5,6 +5,7 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Linq;
 
     public partial class LienHe
     {
@@ -35,5 +36,12 @@
         public int? Updated_by { get; set; }
 
         public int? Status { get; set; }
+
+        public static List<LienHe> getAll(string searchKey)
+        {
+            WebRauTNTContext db = new WebRauTNTContext();
+            searchKey = searchKey + "";
+            return db.LienHe.Where(p => p.Detail.Contains(searchKey)).ToList();
+        }
     }
 }

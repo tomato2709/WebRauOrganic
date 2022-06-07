@@ -18,6 +18,26 @@ namespace WebRauTNT
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+            routes.MapRoute(
+                name: "contact",
+                url: "LienHe",
+                defaults: new { controller = "Home", action = "Contact", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "giohang",
+                url: "GioHang",
+                defaults: new { controller = "GioHang", action = "GioHang", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "login",
+                url: "DangNhap",
+                defaults: new { controller = "Account", action = "Login", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "register",
+                url: "Register",
+                defaults: new { controller = "Account", action = "Register", id = UrlParameter.Optional }
+            );
         }
     }
 }

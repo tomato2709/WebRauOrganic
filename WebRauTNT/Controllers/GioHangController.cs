@@ -32,24 +32,21 @@ namespace WebRauTNT.Controllers
         }
 
         // Thêm giỏ hàng
-        public ActionResult ThemGiohang(int iIdSanPham, string strURL)
+        public ActionResult ThemGioHang(int id, string strURL)
         {
-            // LẤY SESSION 
-            List<Giohang> lstGiohang = LayGioHang();
-            // Kiểm tra sản phẩm đã cho vào giỏ hay chưa
-            Giohang sanpham = lstGiohang.Find(n => n.iIdSanPham == iIdSanPham);
-            if (sanpham == null)
+            List<Giohang> lstGioHang = LayGioHang();
+            Giohang sanPham = lstGioHang.Find(n => n.iIdSanPham == id);
+            if (sanPham == null)
             {
-                sanpham = new Giohang(iIdSanPham);
-                lstGiohang.Add(sanpham);
+                sanPham = new Giohang(id);
+                lstGioHang.Add(sanPham);
                 return Redirect(strURL);
             }
             else
             {
-                sanpham.iSoLuong++;
+                sanPham.iSoLuong++;
                 return Redirect(strURL);
             }
-
         }
 
         // Tổng số lượng
