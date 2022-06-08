@@ -58,6 +58,14 @@
             </div>
 
             <div class="form-group">
+                <strong class="control-label col-md-2">Khách hàng</strong>
+                <div class="col-md-10">
+                    @Html.DropDownList("MaKH", null, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.MaKH, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
                     <input type="submit" value="Cập nhật" class="btn btn-info" />
                     <a class="btn btn-info" href='@Url.Action("Index", "DonHang")' style="margin:10px 0px;">
@@ -69,4 +77,3 @@
         </div>
     </main>
 </div>
-
