@@ -144,10 +144,19 @@
                             <li><a href=@Url.Action("Index", "Home")>Home</a></li>
                             <li><a href="@Url.Action("Index", "Sanphams")">Sản phẩm</a></li>
                             <li><a href="@Url.Action("Contact", "Home")">Liên hệ</a></li>
-                            <li><a href="@Url.Action("Index", "ChiTietDonHang")">Đơn hàng</a></li>
+                            <li><a href="@Url.Action("Giohang", "Giohang")">Giỏ hàng</a></li>
                             <li>
                                 @Html.Action("GiohangPartial", "Giohang")
                             </li>
+                            <div class="hero__search__phone">
+                                <div class="hero__search__phone__icon">
+                                    <i class="fa fa-phone"></i>
+                                </div>
+                                <div class="hero__search__phone__text">
+                                    <h5>+0908.800.008</h5>
+                                    <span>Hỗ trợ 24/7</span>
+                                </div>
+                            </div>
                         </ul>
 
                     </nav>
@@ -161,58 +170,49 @@
         </div>
     </header>
     <!-- Header Section End -->
-    <section class="hero">
+    @*    <section class="hero">
         <div class="container">
-            <div class="row">
-                @*@Html.Action("LoaiSP", "WebRau")*@
+            <div class="row">*@
+    @*@Html.Action("LoaiSP", "WebRau")*@
 
-                <div class="col-lg-3">
-                    <div class="hero__categories">
-                        <div class="hero__categories__all">
-                            <i class="fa fa-bars"></i>
-                            <span>Các loại sản phẩm</span>
-                        </div>
-                        @*                        <ul>
-                                <li><a href="#">Rau tươi</a></li>
-                                <li><a href="#">Củ quả</a></li>
-                                <li><a href="#">Trái cây</a></li>
-                                <li><a href="#">Rau mùi</a></li>
-
-
-                            </ul>*@
-                    </div>
+    @*                <div class="col-lg-3">
+            <div class="hero__categories">
+                <div class="hero__categories__all">
+                    <i class="fa fa-bars"></i>
+                    <span>Các loại sản phẩm</span>
                 </div>
-
-                <div class="col-lg-9">
-                    <div class="hero__search">
-                        <div class="hero__search__form">
-                            <form action="#">
-                                <div class="hero__search__categories">
-                                    Tìm kiếm sản phẩm
-                                    @*<span class="arrow_carrot-down"></span>*@
-                                </div>
-                                <input type="text" placeholder="Tên sản phẩm?">
-                                <button type="submit" class="site-btn">SEARCH</button>
-                            </form>
-                        </div>
-                        <div class="hero__search__phone">
-                            <div class="hero__search__phone__icon">
-                                <i class="fa fa-phone"></i>
-                            </div>
-                            <div class="hero__search__phone__text">
-                                <h5>+0908.800.008</h5>
-                                <span>Hỗ trợ 24/7</span>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-
 
             </div>
-        </div>
-    </section>
+        </div>*@
+
+    @*                <div class="col-lg-9">
+            <div class="hero__search">
+                <div class="hero__search__form">
+                    <form action="#">
+                        <div class="hero__search__categories">
+                            Tìm kiếm sản phẩm
+                            <span class="arrow_carrot-down"></span>
+                        </div>
+                        <input type="text" placeholder="Tên sản phẩm?">
+                        <button type="submit" class="site-btn">SEARCH</button>
+                    </form>
+                </div>
+                <div class="hero__search__phone">
+                    <div class="hero__search__phone__icon">
+                        <i class="fa fa-phone"></i>
+                    </div>
+                    <div class="hero__search__phone__text">
+                        <h5>+0908.800.008</h5>
+                        <span>Hỗ trợ 24/7</span>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+    @*
+
+                </div>
+            </div>
+        </section>*@
 
 
     @RenderBody()
@@ -228,7 +228,7 @@
                             <a href="./index.html"><img src="~/Template/img/logo.png" alt=""></a>
                         </div>
                         <ul>
-                            <li>Địa chỉ: 475A Điện Biên Phủ, Phường 25, Bình Thạnh, Thành phố Hồ Chí Minh </li>
+                            <li>Địa chỉ: 475A Điện Biên Phủ, P.25, Bình Thạnh, Thành phố Hồ Chí Minh </li>
                             <li>Phone: +0908.800.008</li>
                             <li>Email: tntOrganic@gmail.com</li>
                         </ul>

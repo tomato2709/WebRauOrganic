@@ -683,6 +683,7 @@
     <Content Include="Views\Users\Create.cshtml" />
     <Content Include="Views\Users\Delete.cshtml" />
     <Content Include="Views\LienHe\Index.cshtml" />
+    <Content Include="Views\SanPhams\LaySPTheoLoai.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

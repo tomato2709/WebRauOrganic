@@ -166,7 +166,6 @@ namespace WebRauTNT.Controllers
             dh.NgayGiao = DateTime.Parse(ngaygiao);
             dh.TrangThaiGiaoHang = false;
             dh.TongTien = TongTien();
-
             db.DonHang.Add(dh);
             db.SaveChanges();
             foreach (var item in gh)

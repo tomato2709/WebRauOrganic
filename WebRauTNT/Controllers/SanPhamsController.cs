@@ -39,6 +39,17 @@ namespace WebRauTNT.Controllers
             return View(sp);
         }
 
+        public ActionResult LoaiSP()
+        {
+            var loai = from l in db.LoaiSP select l;
+            return PartialView(loai);
+        }
+
+        public ActionResult LaySPTheoLoai(int id)
+        {
+            var sanpham = from sp in db.SanPham where sp.MaLoai == id select sp;
+            return View(sanpham);
+        }
         // GET: SanPhams Admin
 
         public ActionResult IndexAdmin(int? page, string searchString)
