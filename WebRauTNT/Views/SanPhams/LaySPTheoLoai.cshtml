@@ -1,0 +1,38 @@
+﻿@using PagedList.Mvc;
+
+@model IEnumerable<WebRauTNT.Models.SanPham>
+@{ ViewBag.Title = "LaySPTheoLoai";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+<h2 style="color:green; text-align:center">Sản phẩm theo loại</h2>
+
+<div class="container">
+    <div class="filter__item">
+        <div class="row">
+            @foreach (var sanpham in Model)
+            {
+<div class="col-lg-4 col-md-6 col-sm-6">
+    <div class="product__item">
+
+        @*<div class="product__item__pic set-bg" data-setbg="@sanpham.Hinh">*@
+
+        <div class="product__item__pic set-bg">
+            <img alt="@sanpham.Ten" src="/@sanpham.Hinh" style="width:290px;height:270px;" />
+            <ul class="product__item__pic__hover">
+
+                <li><a href="@Url.Action("ThemGioHang","GioHang", new { @id = sanpham.MaSP , @strURL = Request.Url.ToString() } )"><i class="fa fa-shopping-cart"></i></a></li>
+            </ul>
+        </div>
+
+        <div class="product__item__text">
+
+            <h4><a href="@Url.Action("Details", "SanPhams", new { @id = sanpham.MaSP})" style="text-decoration:none; color:black">@sanpham.Ten</a></h4>
+            <h5>@String.Format("{0:0,0}", @sanpham.Gia) VNĐ</h5>
+        </div>
+    </div>
+</div>            }
+        </div>
+    </div>
+
+</div>
+

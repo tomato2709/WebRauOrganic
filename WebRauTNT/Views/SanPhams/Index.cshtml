@@ -2,12 +2,12 @@
 @model WebRauTNT.Models.SanPhamViewModel
 
 @{ ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
 
 <!DOCTYPE html>
 <html>
-<!-- Breadcrumb Section Begin -->
+
+
 <section class="breadcrumb-section set-bg" data-setbg="/Content/img/breadcrumb.jpg">
     <div class="container">
         <div class="row">
@@ -19,6 +19,7 @@
         </div>
     </div>
 </section>
+
 <body>
     <section class="product spad">
         <div class="container">
@@ -26,12 +27,20 @@
                 <div class="col-lg-3 col-md-5">
                     <div class="sidebar">
                         <div class="sidebar__item">
-                            <h4>Loại sản phẩm</h4>
-                            @{ foreach (var item in Model.LoaiSPs)
-                                {
-                                    <ul>
-                                        <li><a href="#" style="text-decoration:none">@item.TenLoai</a></li>
-                                    </ul> } }
+
+                            <div class="hero__categories">
+                                <div class="loaisp">
+                                    <h4 style="color:forestgreen">Các loại sản phẩm</h4>
+                                    @{ foreach (var item in Model.LoaiSPs)
+                                        {
+                            <ul>
+
+                                @*<li><a href="" style="text-decoration:none">@item.TenLoai</a></li>*@
+                                <li><a href="@Url.Action("LaySPTheoLoai", "SanPhams", new { id= item.MaLoai})" style="text-decoration:none; color:black">@item.TenLoai </a></li>
+                            </ul> } }
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -62,25 +71,25 @@
                         {
                             foreach (var item in Model.SanPhams)
                             {
-                                <div class="col-lg-4 col-md-6 col-sm-6">
-                                    <div class="product__item">
-                                        <div class="product__item__pic set-bg" data-setbg="@item.Hinh">
-                                            <ul class="product__item__pic__hover">
-                                                <li><a href="@Url.Action("ThemGioHang","GioHang", new { @id = item.MaSP , @strURL = Request.Url.ToString() } )"><i class="fa fa-shopping-cart"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="product__item__text">
-                                            <h4><a href="@Url.Action("Details", "SanPhams", new { @id = item.MaSP})" style="text-decoration:none; color:black">@item.Ten</a></h4>
-                                            <h5>@String.Format("{0:0,0}", @item.Gia) VNĐ</h5>
-                                        </div>
-                                    </div>
-                                </div> }
-                        }
-                        else
-                        {
-                            <div class="text-center">
-                                <h3>Không tìm thấy sản phẩm:  <strong style="color:red">@ViewBag.Keyword</strong></h3>
-                            </div>}
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="product__item">
+                    <div class="product__item__pic set-bg" data-setbg="@item.Hinh">
+                        <ul class="product__item__pic__hover">
+                            <li><a href="@Url.Action("ThemGioHang","GioHang", new { @id = item.MaSP , @strURL = Request.Url.ToString() } )"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="product__item__text">
+                        <h4><a href="@Url.Action("Details", "SanPhams", new { @id = item.MaSP})" style="text-decoration:none; color:black">@item.Ten</a></h4>
+                        <h5>@String.Format("{0:0,0}", @item.Gia) VNĐ</h5>
+                    </div>
+                </div>
+            </div> }
+    }
+    else
+    {
+<div class="text-center">
+    <h3>Không tìm thấy sản phẩm:  <strong style="color:red">@ViewBag.Keyword</strong></h3>
+</div>}
                         <div>
                             <div>
                                 Trang @(Model.SanPhams.PageCount < Model.SanPhams.PageNumber ? 0 : Model.SanPhams.PageNumber) / @Model.SanPhams.PageCount

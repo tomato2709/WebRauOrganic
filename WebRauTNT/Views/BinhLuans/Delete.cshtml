@@ -4,47 +4,63 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Delete</h2>
+<div id="layoutSidenav_content">
+    <main>
+        <div class="container-fluid px-4">
+            <h2>Xóa bình luận</h2>
 
-<div>
-    <h4>BinhLuan</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.SanPham.Ten)
-        </dt>
+            <h3>Bạn có chắc chắn muốn xóa?</h3>
+            <div>
+                <h4>Bình luận</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        Tên sản phẩm
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.SanPham.Ten)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.SanPham.Ten)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.NoiDung)
-        </dt>
+                    <dt>
+                        Nội dung
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.NoiDung)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.NoiDung)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MaKH)
-        </dt>
+                    <dt>
+                        Mã khách hàng
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.MaKH)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.MaKH)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.NgayTao)
-        </dt>
+                    <dt>
+                        Ngày đăng
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.NgayTao)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.NgayTao)
+                    </dd>
 
-    </dl>
+                </dl>
+
+                @using (Html.BeginForm())
+                {
+    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <p>
+                            <input type="submit" value="Xóa" class="btn btn-danger" /> |
+                            <a class="btn btn-success" href='@Url.Action("Index", "BinhLuan")' style="margin:10px 0px;">
+                                Trở về
+                            </a>
+                        </p>
+                    </div>}
+            </div>
+        </div>
+    </main>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MaBinhLuan }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

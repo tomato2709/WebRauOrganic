@@ -1,8 +1,6 @@
 ﻿@model WebRauTNT.Models.DonHangViewModel
-@{
-    ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
-}
+@{ ViewBag.Title = "Details";
+                Layout = "~/Views/Shared/_LayoutAdmin.cshtml"; }
 
 <div id="layoutSidenav_content">
     <main>
@@ -22,11 +20,11 @@
             <label class="list-box tri-state" id="TrangThaiGiaoHang" name="TrangThaiGiaoHang">
                 <a value="true">Đã giao</a>
             </label> }
-                        else
-                        {
-            <label class="list-box tri-state" id="TrangThaiGiaoHang" name="TrangThaiGiaoHang">
-                <a value="true">Chưa giao</a>
-            </label>}
+        else
+        {
+<label class="list-box tri-state" id="TrangThaiGiaoHang" name="TrangThaiGiaoHang">
+    <a value="true">Chưa giao</a>
+</label>}
                     </dd>
 
                     <dt class="col-md-2">
@@ -98,7 +96,8 @@
                 <td>
                     @String.Format("{0:0,0}", item.Gia)
                 </td>
-            </tr>}
+            </tr>
+}
                     </tbody>
                 </table>
             </div>
