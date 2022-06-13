@@ -10,5 +10,13 @@ namespace WebRauTNT.Models
         public PagedList.PagedList<DateTime> ThangNam { get; set; }
         public List<Double> Result { get; set; }
         public double Total { get; set; }
+
+        public int SumLoaiSP { get; set; }
+
+        public int SumSP { get; set; }
+
+        public int SumDH { get; set; }
+
+        public int SumKH { get; set; }
     }
 }

@@ -163,7 +163,7 @@ namespace WebRauTNT.Controllers
             var ngaygiao = String.Format("{0:MM/dd/yyyy}", collection["NgayGiao"]);
             dh.MaKH = kh.Id;
             dh.NgayDat = DateTime.Now;
-            dh.NgayGiao = DateTime.Parse(ngaygiao);
+            /*dh.NgayGiao = DateTime.Parse(ngaygiao);*/
             dh.TrangThaiGiaoHang = false;
             dh.TongTien = TongTien();
             db.DonHang.Add(dh);

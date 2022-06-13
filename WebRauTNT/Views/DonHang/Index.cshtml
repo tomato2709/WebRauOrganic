@@ -15,19 +15,19 @@
                 <thead class="thead-dark">
                     <tr>
                         <th>
-                            Trạng thái giao hàng
-                        </th>
-                        <th>
-                            Ngày đặt
-                        </th>
-                        <th>
-                            Ngày giao
+                            Người nhận
                         </th>
                         <th>
                             Email
                         </th>
                         <th>
+                            Ngày đặt
+                        </th>
+                        <th>
                             Tổng tiền
+                        </th>
+                        <th>
+                            Trạng thái giao hàng
                         </th>
                         <th>
                             Thao tác
@@ -41,49 +41,54 @@
 
         <tr>
 
-            <!--<td class="checkbox">
-            @Html.EditorFor(modelItem => item.TrangThaiGiaoHang)-->
-            @*<a href="@Url.Action("Edit","DonHangs",new { @tt = Html.DisplayFor(modelItem => item.TrangThaiGiaoHang), @id = item.MaDH})">Cập nhật</a>*@
-            @*<input type="submit" id="cbTrangThai" name="cbTrangThai"  class="btn btn-danger" style="zoom: 0.8;" />*@
+@*          <td class="checkbox">
+            @Html.EditorFor(modelItem => item.TrangThaiGiaoHang)
+            <a href="@Url.Action("Edit","DonHangs",new { @tt = Html.DisplayFor(modelItem => item.TrangThaiGiaoHang), @id = item.MaDH})">Cập nhật</a>
+            <input type="submit" id="cbTrangThai" name="cbTrangThai"  class="btn btn-danger" style="zoom: 0.8;" />
 
-            <!--</td>-->
-            @using (Html.BeginForm("EditTT", "DonHangs", new { @id = item.MaDH }))
-            {
-<td class="checkbox" style="display: flex; justify-content: space-between;">
-    <select class="list-box tri-state" id="item.TrangThaiGiaoHang" name="item.TrangThaiGiaoHang">
-        @if (item.TrangThaiGiaoHang == true)
-        {
-<option selected="selected" value="true">Đã giao</option>
-                        <option value="false">Chưa giao</option>
- }
-                    else
-                    {
-<option value="true">Đã giao</option>
-                        <option selected="selected" value="false">Chưa giao</option>
-}
-    </select>
-    @*<input type="submit" value="Cập nhật" class="btn btn-success" />*@
-</td>
-}
-            <td>
-                @Html.DisplayFor(modelItem => item.NgayDat)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NgayGiao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AspNetUser.Email)
-            </td>
-            <td>
-                @String.Format("{0:0,0}", item.TongTien)
-            </td>
-            <td>
-                @Html.ActionLink("Sửa", "Edit", new { id = item.MaDH }, new { @class = "btn btn-warning" })
-                @Html.ActionLink("Chi tiết", "Details", new { id = item.MaDH }, new { @class = "btn btn-info", @style = "margin-left:5px" })
-                @Html.ActionLink("Xóa", "Delete", new { id = item.MaDH }, new { @class = "btn btn-danger", @style = "margin-left:5px" })
-            </td>
-        </tr>
-}
+            </td>*@
+
+                                
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AspNetUser.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AspNetUser.Email)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NgayDat)
+                                </td>
+                                <td>
+                                    @String.Format("{0:0,0}", item.TongTien)
+                                </td>
+                                @using (Html.BeginForm("EditTT", "DonHang", new { @id = item.MaDH }))
+                                    {
+                                    <td class="checkbox" style="display: flex; justify-content: space-between;">
+                                    <select class="list-box tri-state" id="item.TrangThaiGiaoHang" name="item.TrangThaiGiaoHang">
+                                        @if (item.TrangThaiGiaoHang == true)
+                                         {
+                                            <option selected="selected" value="true">Đã giao</option>
+                                            <option value="false">Chưa giao</option>
+                                         }
+                                         else
+                                         {
+                                            <option value="true">Đã giao</option>
+                                            <option selected="selected" value="false">Chưa giao</option>
+                                         }
+                                    </select>
+                                     <input type="submit" value="Xác nhận" class="btn btn-success" />
+                                    </td>
+                                    }
+                                <td>
+
+                                    @*@Html.ActionLink("Sửa", "Edit", new { id = item.MaDH }, new { @class = "btn btn-warning" })*@
+                                    @Html.ActionLink("Chi tiết", "Details", new { id = item.MaDH }, new { @class = "btn btn-info", @style = "margin-left:5px" })
+                                    @*@Html.ActionLink("Xóa", "Delete", new { id = item.MaDH }, new { @class = "btn btn-danger", @style = "margin-left:5px" })*@
+                                    @*<input type="submit" value="Cập nhật" class="btn btn-success" />*@
+                                    
+                                </td>
+                            </tr>
+                    }
                 </tbody>
             </table>
             <div style=" margin-bottom:50px;">

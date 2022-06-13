@@ -75,14 +75,13 @@ namespace WebRauTNT.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             return View(donHang);
         }
 
         public ActionResult EditTT(int id, FormCollection collection)
         {
-            if (!AuthAdmin())
-                return RedirectToAction("Error401", "Admin");
+            if (!AuthAdmin()) { return RedirectToAction("Error401", "Admin"); }
+                
             Models.DonHang donHang = db.DonHang.Find(id);
             if (donHang != null)
             {
@@ -154,6 +153,7 @@ namespace WebRauTNT.Controllers
         {
             if (!AuthAdmin())
                 return RedirectToAction("Error401", "Admin");
+
             Models.DonHang donHang = db.DonHang.Find(id);
             db.DonHang.Remove(donHang);
             db.SaveChanges();
@@ -188,6 +188,10 @@ namespace WebRauTNT.Controllers
             }
             var result = new List<double>();
             double total = 0;
+            int sumloaisp = db.LoaiSP.Count();
+            int sumsp  = db.SanPham.Count();
+            int sumdh = db.DonHang.Count();
+            int sumkh = dataUser.Users.Count();
             for (var i = 0; i < thangNam.Count; i++)
             {
                 var tienThang = data.DonHangs.Where(d => thangNam[i].Month == d.NgayDat.Value.Month && thangNam[i].Year == d.NgayDat.Value.Year).Select(d => d.TongTien).Sum();
@@ -200,7 +204,11 @@ namespace WebRauTNT.Controllers
             {
                 ThangNam = (PagedList<DateTime>)thangNam.ToPagedList(pageNum, pageSize),
                 Result = result,
-                Total = total
+                Total = total, 
+                SumLoaiSP = sumloaisp,
+                SumSP = sumsp,
+                SumDH = sumdh,
+                SumKH = sumkh
             };
             return View(viewModel);
         }
