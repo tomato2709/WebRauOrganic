@@ -8,6 +8,8 @@ namespace WebRauTNT.Models
     public class SanPhamDetailModel
     {
         public SanPham SanPham { get; set; }
+        public IEnumerable<SanPham> SanPhams { get; set; }
         public PagedList.PagedList<BinhLuan> BinhLuans { get; set; }
+
     }
 }

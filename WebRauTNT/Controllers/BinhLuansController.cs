@@ -25,7 +25,7 @@ namespace WebRauTNT.Controllers
             ViewBag.Keyword = searchString;
             //var all_loaiSP = (from s in db.BinhLuan select s).OrderBy(m => m.NgayTao);
             int pageSize = 10;
-            int pageNum = page ?? 1;
+            int pageNum = page ?? 1;            
             return View(BinhLuan.getAll(searchString).ToPagedList(pageNum, pageSize));
         }
 
@@ -71,7 +71,7 @@ namespace WebRauTNT.Controllers
 
             // lay login user id
             ApplicationUser user = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().FindById(System.Web.HttpContext.Current.User.Identity.GetUserId());
-            binhLuan.MaKH = user.Id;
+            binhLuan.MaKH = user.Id;           
             binhLuan.MaSP = id;
             binhLuan.NoiDung = content;
             binhLuan.NgayTao = DateTime.Now;

@@ -28,36 +28,36 @@ namespace WebRauTNT.Models.LinQ
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
 		
-    #region Extensibility Method Definitions
-    partial void OnCreated();
-    partial void InsertSanPham(SanPham instance);
-    partial void UpdateSanPham(SanPham instance);
-    partial void DeleteSanPham(SanPham instance);
-    partial void InsertLoaiSP(LoaiSP instance);
-    partial void UpdateLoaiSP(LoaiSP instance);
-    partial void DeleteLoaiSP(LoaiSP instance);
-    partial void InsertDonHang(DonHang instance);
-    partial void UpdateDonHang(DonHang instance);
-    partial void DeleteDonHang(DonHang instance);
-    partial void InsertBinhLuan(BinhLuan instance);
-    partial void UpdateBinhLuan(BinhLuan instance);
-    partial void DeleteBinhLuan(BinhLuan instance);
-    partial void InsertChiTietDonHang(ChiTietDonHang instance);
-    partial void UpdateChiTietDonHang(ChiTietDonHang instance);
-    partial void DeleteChiTietDonHang(ChiTietDonHang instance);
-    partial void InsertAspNetRole(AspNetRole instance);
-    partial void UpdateAspNetRole(AspNetRole instance);
-    partial void DeleteAspNetRole(AspNetRole instance);
-    partial void InsertAspNetUserRole(AspNetUserRole instance);
-    partial void UpdateAspNetUserRole(AspNetUserRole instance);
-    partial void DeleteAspNetUserRole(AspNetUserRole instance);
-    partial void InsertLienHe(LienHe instance);
-    partial void UpdateLienHe(LienHe instance);
-    partial void DeleteLienHe(LienHe instance);
-    partial void InsertAspNetUser(AspNetUser instance);
-    partial void UpdateAspNetUser(AspNetUser instance);
-    partial void DeleteAspNetUser(AspNetUser instance);
-    #endregion
+	#region Extensibility Method Definitions
+	partial void OnCreated();
+	partial void InsertSanPham(SanPham instance);
+	partial void UpdateSanPham(SanPham instance);
+	partial void DeleteSanPham(SanPham instance);
+	partial void InsertLoaiSP(LoaiSP instance);
+	partial void UpdateLoaiSP(LoaiSP instance);
+	partial void DeleteLoaiSP(LoaiSP instance);
+	partial void InsertDonHang(DonHang instance);
+	partial void UpdateDonHang(DonHang instance);
+	partial void DeleteDonHang(DonHang instance);
+	partial void InsertBinhLuan(BinhLuan instance);
+	partial void UpdateBinhLuan(BinhLuan instance);
+	partial void DeleteBinhLuan(BinhLuan instance);
+	partial void InsertChiTietDonHang(ChiTietDonHang instance);
+	partial void UpdateChiTietDonHang(ChiTietDonHang instance);
+	partial void DeleteChiTietDonHang(ChiTietDonHang instance);
+	partial void InsertAspNetRole(AspNetRole instance);
+	partial void UpdateAspNetRole(AspNetRole instance);
+	partial void DeleteAspNetRole(AspNetRole instance);
+	partial void InsertAspNetUserRole(AspNetUserRole instance);
+	partial void UpdateAspNetUserRole(AspNetUserRole instance);
+	partial void DeleteAspNetUserRole(AspNetUserRole instance);
+	partial void InsertLienHe(LienHe instance);
+	partial void UpdateLienHe(LienHe instance);
+	partial void DeleteLienHe(LienHe instance);
+	partial void InsertAspNetUser(AspNetUser instance);
+	partial void UpdateAspNetUser(AspNetUser instance);
+	partial void DeleteAspNetUser(AspNetUser instance);
+	#endregion
 		
 		public MyDataDataContext() : 
 				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["WebRauTNTConnectionString"].ConnectionString, mappingSource)
@@ -192,29 +192,29 @@ namespace WebRauTNT.Models.LinQ
 		
 		private EntityRef<LoaiSP> _LoaiSP;
 		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaSPChanging(int value);
-    partial void OnMaSPChanged();
-    partial void OnMaLoaiChanging(int value);
-    partial void OnMaLoaiChanged();
-    partial void OnTenChanging(string value);
-    partial void OnTenChanged();
-    partial void OnMoTaChanging(string value);
-    partial void OnMoTaChanged();
-    partial void OnGiaChanging(System.Nullable<double> value);
-    partial void OnGiaChanged();
-    partial void OnSoLuongChanging(System.Nullable<int> value);
-    partial void OnSoLuongChanged();
-    partial void OnDonViChanging(string value);
-    partial void OnDonViChanged();
-    partial void OnGiamGiaChanging(System.Nullable<double> value);
-    partial void OnGiamGiaChanged();
-    partial void OnHinhChanging(string value);
-    partial void OnHinhChanged();
-    #endregion
+	#region Extensibility Method Definitions
+	partial void OnLoaded();
+	partial void OnValidate(System.Data.Linq.ChangeAction action);
+	partial void OnCreated();
+	partial void OnMaSPChanging(int value);
+	partial void OnMaSPChanged();
+	partial void OnMaLoaiChanging(int value);
+	partial void OnMaLoaiChanged();
+	partial void OnTenChanging(string value);
+	partial void OnTenChanged();
+	partial void OnMoTaChanging(string value);
+	partial void OnMoTaChanged();
+	partial void OnGiaChanging(System.Nullable<double> value);
+	partial void OnGiaChanged();
+	partial void OnSoLuongChanging(System.Nullable<int> value);
+	partial void OnSoLuongChanged();
+	partial void OnDonViChanging(string value);
+	partial void OnDonViChanged();
+	partial void OnGiamGiaChanging(System.Nullable<double> value);
+	partial void OnGiamGiaChanged();
+	partial void OnHinhChanging(string value);
+	partial void OnHinhChanged();
+	#endregion
 		
 		public SanPham()
 		{
@@ -525,15 +525,15 @@ namespace WebRauTNT.Models.LinQ
 		
 		private EntitySet<SanPham> _SanPhams;
 		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaLoaiChanging(int value);
-    partial void OnMaLoaiChanged();
-    partial void OnTenLoaiChanging(string value);
-    partial void OnTenLoaiChanged();
-    #endregion
+	#region Extensibility Method Definitions
+	partial void OnLoaded();
+	partial void OnValidate(System.Data.Linq.ChangeAction action);
+	partial void OnCreated();
+	partial void OnMaLoaiChanging(int value);
+	partial void OnMaLoaiChanged();
+	partial void OnTenLoaiChanging(string value);
+	partial void OnTenLoaiChanged();
+	#endregion
 		
 		public LoaiSP()
 		{
@@ -649,23 +649,23 @@ namespace WebRauTNT.Models.LinQ
 		
 		private EntityRef<AspNetUser> _AspNetUsers;
 		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaDHChanging(int value);
-    partial void OnMaDHChanged();
-    partial void OnTrangThaiGiaoHangChanging(System.Nullable<bool> value);
-    partial void OnTrangThaiGiaoHangChanged();
-    partial void OnNgayDatChanging(System.Nullable<System.DateTime> value);
-    partial void OnNgayDatChanged();
-    partial void OnNgayGiaoChanging(System.Nullable<System.DateTime> value);
-    partial void OnNgayGiaoChanged();
-    partial void OnMaKHChanging(string value);
-    partial void OnMaKHChanged();
-    partial void OnTongTienChanging(System.Nullable<double> value);
-    partial void OnTongTienChanged();
-    #endregion
+	#region Extensibility Method Definitions
+	partial void OnLoaded();
+	partial void OnValidate(System.Data.Linq.ChangeAction action);
+	partial void OnCreated();
+	partial void OnMaDHChanging(int value);
+	partial void OnMaDHChanged();
+	partial void OnTrangThaiGiaoHangChanging(System.Nullable<bool> value);
+	partial void OnTrangThaiGiaoHangChanged();
+	partial void OnNgayDatChanging(System.Nullable<System.DateTime> value);
+	partial void OnNgayDatChanged();
+	partial void OnNgayGiaoChanging(System.Nullable<System.DateTime> value);
+	partial void OnNgayGiaoChanged();
+	partial void OnMaKHChanging(string value);
+	partial void OnMaKHChanged();
+	partial void OnTongTienChanging(System.Nullable<double> value);
+	partial void OnTongTienChanged();
+	#endregion
 		
 		public DonHang()
 		{
@@ -898,21 +898,21 @@ namespace WebRauTNT.Models.LinQ
 		
 		private EntityRef<AspNetUser> _AspNetUsers;
 		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaBinhLuanChanging(int value);
-    partial void OnMaBinhLuanChanged();
-    partial void OnNoiDungChanging(string value);
-    partial void OnNoiDungChanged();
-    partial void OnMaSPChanging(System.Nullable<int> value);
-    partial void OnMaSPChanged();
-    partial void OnMaKHChanging(string value);
-    partial void OnMaKHChanged();
-    partial void OnNgayTaoChanging(System.Nullable<System.DateTime> value);
-    partial void OnNgayTaoChanged();
-    #endregion
+	#region Extensibility Method Definitions
+	partial void OnLoaded();
+	partial void OnValidate(System.Data.Linq.ChangeAction action);
+	partial void OnCreated();
+	partial void OnMaBinhLuanChanging(int value);
+	partial void OnMaBinhLuanChanged();
+	partial void OnNoiDungChanging(string value);
+	partial void OnNoiDungChanged();
+	partial void OnMaSPChanging(System.Nullable<int> value);
+	partial void OnMaSPChanged();
+	partial void OnMaKHChanging(string value);
+	partial void OnMaKHChanged();
+	partial void OnNgayTaoChanging(System.Nullable<System.DateTime> value);
+	partial void OnNgayTaoChanged();
+	#endregion
 		
 		public BinhLuan()
 		{
@@ -1136,19 +1136,19 @@ namespace WebRauTNT.Models.LinQ
 		
 		private EntityRef<SanPham> _SanPham;
 		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaSPChanging(int value);
-    partial void OnMaSPChanged();
-    partial void OnMaDHChanging(int value);
-    partial void OnMaDHChanged();
-    partial void OnSoluongChanging(System.Nullable<int> value);
-    partial void OnSoluongChanged();
-    partial void OnGiaChanging(System.Nullable<double> value);
-    partial void OnGiaChanged();
-    #endregion
+	#region Extensibility Method Definitions
+	partial void OnLoaded();
+	partial void OnValidate(System.Data.Linq.ChangeAction action);
+	partial void OnCreated();
+	partial void OnMaSPChanging(int value);
+	partial void OnMaSPChanged();
+	partial void OnMaDHChanging(int value);
+	partial void OnMaDHChanged();
+	partial void OnSoluongChanging(System.Nullable<int> value);
+	partial void OnSoluongChanged();
+	partial void OnGiaChanging(System.Nullable<double> value);
+	partial void OnGiaChanged();
+	#endregion
 		
 		public ChiTietDonHang()
 		{
@@ -1346,15 +1346,15 @@ namespace WebRauTNT.Models.LinQ
 		
 		private EntitySet<AspNetUserRole> _AspNetUserRoles;
 		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(string value);
-    partial void OnIdChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
-    #endregion
+	#region Extensibility Method Definitions
+	partial void OnLoaded();
+	partial void OnValidate(System.Data.Linq.ChangeAction action);
+	partial void OnCreated();
+	partial void OnIdChanging(string value);
+	partial void OnIdChanged();
+	partial void OnNameChanging(string value);
+	partial void OnNameChanged();
+	#endregion
 		
 		public AspNetRole()
 		{
@@ -1462,15 +1462,15 @@ namespace WebRauTNT.Models.LinQ
 		
 		private EntityRef<AspNetUser> _AspNetUsers;
 		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnUserIdChanging(string value);
-    partial void OnUserIdChanged();
-    partial void OnRoleIdChanging(string value);
-    partial void OnRoleIdChanged();
-    #endregion
+	#region Extensibility Method Definitions
+	partial void OnLoaded();
+	partial void OnValidate(System.Data.Linq.ChangeAction action);
+	partial void OnCreated();
+	partial void OnUserIdChanging(string value);
+	partial void OnUserIdChanged();
+	partial void OnRoleIdChanging(string value);
+	partial void OnRoleIdChanged();
+	#endregion
 		
 		public AspNetUserRole()
 		{
@@ -1646,35 +1646,35 @@ namespace WebRauTNT.Models.LinQ
 		
 		private System.Nullable<int> _Status;
 		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnFullNameChanging(string value);
-    partial void OnFullNameChanged();
-    partial void OnEmailChanging(string value);
-    partial void OnEmailChanged();
-    partial void OnPhoneChanging(int value);
-    partial void OnPhoneChanged();
-    partial void OnTitleChanging(string value);
-    partial void OnTitleChanged();
-    partial void OnDetailChanging(string value);
-    partial void OnDetailChanged();
-    partial void OnFlagChanging(int value);
-    partial void OnFlagChanged();
-    partial void OnReplyChanging(string value);
-    partial void OnReplyChanged();
-    partial void OnCreated_atChanging(System.Nullable<System.DateTime> value);
-    partial void OnCreated_atChanged();
-    partial void OnUpdated_atChanging(System.Nullable<System.DateTime> value);
-    partial void OnUpdated_atChanged();
-    partial void OnUpdated_byChanging(System.Nullable<int> value);
-    partial void OnUpdated_byChanged();
-    partial void OnStatusChanging(System.Nullable<int> value);
-    partial void OnStatusChanged();
-    #endregion
+	#region Extensibility Method Definitions
+	partial void OnLoaded();
+	partial void OnValidate(System.Data.Linq.ChangeAction action);
+	partial void OnCreated();
+	partial void OnIdChanging(int value);
+	partial void OnIdChanged();
+	partial void OnFullNameChanging(string value);
+	partial void OnFullNameChanged();
+	partial void OnEmailChanging(string value);
+	partial void OnEmailChanged();
+	partial void OnPhoneChanging(int value);
+	partial void OnPhoneChanged();
+	partial void OnTitleChanging(string value);
+	partial void OnTitleChanged();
+	partial void OnDetailChanging(string value);
+	partial void OnDetailChanged();
+	partial void OnFlagChanging(int value);
+	partial void OnFlagChanged();
+	partial void OnReplyChanging(string value);
+	partial void OnReplyChanged();
+	partial void OnCreated_atChanging(System.Nullable<System.DateTime> value);
+	partial void OnCreated_atChanged();
+	partial void OnUpdated_atChanging(System.Nullable<System.DateTime> value);
+	partial void OnUpdated_atChanged();
+	partial void OnUpdated_byChanging(System.Nullable<int> value);
+	partial void OnUpdated_byChanged();
+	partial void OnStatusChanging(System.Nullable<int> value);
+	partial void OnStatusChanged();
+	#endregion
 		
 		public LienHe()
 		{
@@ -1982,39 +1982,39 @@ namespace WebRauTNT.Models.LinQ
 		
 		private EntitySet<AspNetUserRole> _AspNetUserRoles;
 		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(string value);
-    partial void OnIdChanged();
-    partial void OnEmailChanging(string value);
-    partial void OnEmailChanged();
-    partial void OnEmailConfirmedChanging(bool value);
-    partial void OnEmailConfirmedChanged();
-    partial void OnPasswordHashChanging(string value);
-    partial void OnPasswordHashChanged();
-    partial void OnSecurityStampChanging(string value);
-    partial void OnSecurityStampChanged();
-    partial void OnPhoneNumberChanging(string value);
-    partial void OnPhoneNumberChanged();
-    partial void OnPhoneNumberConfirmedChanging(bool value);
-    partial void OnPhoneNumberConfirmedChanged();
-    partial void OnTwoFactorEnabledChanging(bool value);
-    partial void OnTwoFactorEnabledChanged();
-    partial void OnLockoutEndDateUtcChanging(System.Nullable<System.DateTime> value);
-    partial void OnLockoutEndDateUtcChanged();
-    partial void OnLockoutEnabledChanging(bool value);
-    partial void OnLockoutEnabledChanged();
-    partial void OnAccessFailedCountChanging(int value);
-    partial void OnAccessFailedCountChanged();
-    partial void OnUserNameChanging(string value);
-    partial void OnUserNameChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
-    partial void OnAddressChanging(string value);
-    partial void OnAddressChanged();
-    #endregion
+	#region Extensibility Method Definitions
+	partial void OnLoaded();
+	partial void OnValidate(System.Data.Linq.ChangeAction action);
+	partial void OnCreated();
+	partial void OnIdChanging(string value);
+	partial void OnIdChanged();
+	partial void OnEmailChanging(string value);
+	partial void OnEmailChanged();
+	partial void OnEmailConfirmedChanging(bool value);
+	partial void OnEmailConfirmedChanged();
+	partial void OnPasswordHashChanging(string value);
+	partial void OnPasswordHashChanged();
+	partial void OnSecurityStampChanging(string value);
+	partial void OnSecurityStampChanged();
+	partial void OnPhoneNumberChanging(string value);
+	partial void OnPhoneNumberChanged();
+	partial void OnPhoneNumberConfirmedChanging(bool value);
+	partial void OnPhoneNumberConfirmedChanged();
+	partial void OnTwoFactorEnabledChanging(bool value);
+	partial void OnTwoFactorEnabledChanged();
+	partial void OnLockoutEndDateUtcChanging(System.Nullable<System.DateTime> value);
+	partial void OnLockoutEndDateUtcChanged();
+	partial void OnLockoutEnabledChanging(bool value);
+	partial void OnLockoutEnabledChanged();
+	partial void OnAccessFailedCountChanging(int value);
+	partial void OnAccessFailedCountChanged();
+	partial void OnUserNameChanging(string value);
+	partial void OnUserNameChanged();
+	partial void OnNameChanging(string value);
+	partial void OnNameChanged();
+	partial void OnAddressChanging(string value);
+	partial void OnAddressChanged();
+	#endregion
 		
 		public AspNetUser()
 		{

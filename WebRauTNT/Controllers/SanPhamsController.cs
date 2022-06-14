@@ -81,10 +81,12 @@ namespace WebRauTNT.Controllers
                 i.Name = user.Name;
             }
             int pageSize = 5;
-            int pageNum = page ?? 1;
+            int pageNum = page ?? 1;            
+            var sanphamcungloai = from sph in db.SanPham where sph.MaLoai == 1 select sph;
             SanPhamDetailModel sp = new SanPhamDetailModel
             {
                 SanPham = sanPham,
+                SanPhams = sanphamcungloai,
                 BinhLuans = (PagedList.PagedList<BinhLuan>)sanPham.BinhLuan.ToPagedList(pageNum, pageSize)
             };
             return View(sp);

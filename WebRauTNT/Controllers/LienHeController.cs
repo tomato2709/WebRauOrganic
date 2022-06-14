@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WebRauTNT.Models;
@@ -21,6 +22,35 @@ namespace WebRauTNT.Controllers
             int pageSize = 10;
             int pageNum = page ?? 1;
             return View(LienHe.getAll(searchString).ToPagedList(pageNum, pageSize));
+        }
+
+        public ActionResult Delete(int? id)
+        {
+            if (!AuthAdmin())
+                return RedirectToAction("Error401", "Admin");
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            LienHe lh = db.LienHe.Find(id);
+            if (lh == null)
+            {
+                return HttpNotFound();
+            }
+            return View(lh);
+        }
+
+        // POST: BinhLuans/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            if (!AuthAdmin())
+                return RedirectToAction("Error401", "Admin");
+            LienHe lhe = db.LienHe.Find(id);
+            db.LienHe.Remove(lhe);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
