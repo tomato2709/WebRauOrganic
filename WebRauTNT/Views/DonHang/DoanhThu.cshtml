@@ -1,0 +1,92 @@
+﻿@model WebRauTNT.Models.DoanhThuViewModel
+@using PagedList.Mvc
+@{ ViewBag.Title = "DoanhThu";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml"; }
+
+<div id="layoutSidenav_content">
+    <main>
+        <div class="container-fluid px-4">
+           
+            <h2 style=" margin-top: 20px; margin-bottom:50px; text-align: center">THỐNG KÊ</h2>
+            <h3 style="margin-bottom:10px">Thống kê số liệu</h3>
+             <table class="table table-bordered table-info">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>
+                            Số loại sản phẩm
+                        </th>
+                        <th>
+                            Tổng số sản phẩm
+                        </th>
+                        <th>
+                            Tổng số đơn hàng
+                        </th>
+                        <th>
+                            Tổng số khách hàng
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="table-light">
+                    @for (var i = 0; i < Model.ThangNam.Count; i++)
+                    {
+                            <tr>
+                                <td>
+                                    @Model.SumLoaiSP
+                                </td>
+                                <td>
+                                    @Model.SumSP
+                                </td>
+                                <td>
+                                    @Model.SumDH
+                                </td>
+                                <td>
+                                    @Model.SumKH
+                                </td>
+                            </tr>
+                    }
+                </tbody>
+             </table>
+
+            
+            <br />
+            <h3 style="margin-bottom:10px">Doanh thu theo tháng</h3>
+                <table class="table table-bordered table-condensed">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>
+                                Tháng/năm
+                            </th>
+                            <th>
+                                Doanh thu
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-light">
+                        @for (var i = 0; i < Model.ThangNam.Count; i++)
+                        {
+                            <tr>
+                                <td>
+                                    @Model.ThangNam[i].Month/@Model.ThangNam[i].Year
+                                </td>
+                                <td>
+                                    @String.Format("{0:0,0}", @Model.Result[i])
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            <h4 style=" margin-top:10px;">Tổng doanh thu: @String.Format("{0:0,0}", @Model.Total)</h4>
+
+@*            <div style=" margin-bottom:50px;">
+                <div>
+                    Trang @(Model.ThangNam.PageCount < Model.ThangNam.PageNumber ? 0 : Model.ThangNam.PageNumber) / @Model.ThangNam.PageCount
+                </div>
+                <div class="MenuTrang">
+                    @Html.PagedListPager(Model.ThangNam, page => Url.Action("Index", new { page = page }))
+                </div>
+            </div>*@
+        </div>
+    </main>
+</div>
+
+

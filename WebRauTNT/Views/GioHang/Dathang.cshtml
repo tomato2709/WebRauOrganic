@@ -1,0 +1,115 @@
+﻿@model IEnumerable<WebRauTNT.Models.Giohang>
+@{ ViewBag.Title = "DatHang";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+
+<section class="breadcrumb-section set-bg" data-setbg="/Content/img/breadcrumb.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="breadcrumb__text">
+                    <h2>Đặt hàng</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
+<br />
+
+<h2 style="text-align:center;margin-top:20px;color:forestgreen">XÁC NHẬN ĐƠN HÀNG</h2>
+<section class="checkout spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                @using WebRauTNT.Models.LinQ;
+                <h4 style="text-align:center;margin-top:20px;color:black;font-weight:bold;">Thông Tin Người đặt</h4><br>
+                @{ AspNetUser kh = (AspNetUser)Session["TaiKhoan"]; }
+
+                <table align="center" style="font-size: 15px;">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.ValidationSummary(true)
+                        <tr style="height:40px">
+                            <td>Họ tên khách hàng: </td>
+                            <td style="font-weight:bold"> <input type="text" name="FullName" value="@kh.Name" class="form-control"></td>
+
+                        </tr>
+                        <tr style="height:40px">
+                            <td>Địa chỉ nhận hàng: </td>
+                            <td style="font-weight:bold"> <input type="text" name="FullName" value="@kh.Address" class="form-control"></td>
+
+                        </tr>
+                        <tr style="height:40px">
+                            <td>Email: </td>
+                            <td style="font-weight:bold"> <input type="text" name="Email" value="@kh.Email" class="form-control"></td>
+                        </tr>
+                        <tr style-"height:40px">
+                            <td>Điện thoại: </td>
+                            <td style="font-weight: bold"> <input type="text" name="PhoneNumber" value="@kh.PhoneNumber" class="form-control"></td>
+                        </tr>
+                        <tr style-"height:40px">
+                            <td>Ngày đặt: </td>
+                            <td style="font-weight:bold">&emsp; @DateTime.Now.ToShortDateString()</td>
+                        </tr> 
+                        }                       
+
+
+                </table>
+            </div>
+            <!-- Bill -->
+            <div class="col-lg-4 col-md-6">
+                <div class="checkout__order">
+                    <h4>Đơn hàng của bạn</h4>
+                    <div class="checkout__order__products">Sản phẩm <span>Giá * SL</span></div>
+                    @foreach (var item in Model)
+                    {
+                        <ul>
+                            <li>@item.sTenSanPham<span>@item.dGia * @item.iSoLuong</span></li>
+                        </ul>
+                     }
+                    <div class="checkout__order__subtotal">Tổng tiền <span style="color:orangered">@String.Format("{0:0,0}", ViewBag.TongTien) VNĐ</span></div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <h4 style="text-align:center;margin-top:20px;color:black;font-weight:bold;">Thông Tin Người nhận</h4><br>
+
+                <table align="center" style="font-size: 15px;">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.ValidationSummary(true)
+
+                             <tr style-"height:40px">
+                                <td>Tên người nhận: </td>
+                                <td style="font-weight: bold"> <input type="text" name="NguoiNhan" value="" class="form-control"></td>
+                             </tr>
+                     
+                             <tr style-"height:40px">
+                                <td>Địa chỉ nhận: </td>
+                                <td style="font-weight: bold"> <input type="text" name="DiaChiGiaoHang" value="" class="form-control"></td>
+                             </tr>
+
+                             <tr style-"height:40px">
+                                <td>SĐT Người nhận: </td>
+                                <td style="font-weight: bold"> <input type="text" name="SDTNguoiNhan" value="" class="form-control"></td>
+                             </tr>
+                             <tr style-"height:40px">
+                                <td>Ghi chú: </td>
+                                <td style="font-weight: bold"> <input type="text" name="GhiChu" value="" class="form-control"></td>
+                             </tr>
+                             <tr style-"height:40px">
+                                <td></td>
+                                <td style="font-weight:bold;">
+                                    <br />
+                                    <input type="submit" value="Xác nhận" class="primary-btn" />
+                                </td>
+                             </tr>
+
+                     }
+                </table>
+            </div>
+        </div>
+
+    </div>
+</section>

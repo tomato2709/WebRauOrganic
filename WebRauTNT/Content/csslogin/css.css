@@ -1,0 +1,21 @@
+﻿.col-md-8 {
+    width: 100%;
+    margin: 0 auto;
+}
+.signup-form {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 15px;
+    border: 2px dotted #cccccc;
+    border-radius: 10px;
+    
+}
+
+
+.loginForm {
+    width: 100%;
+    position: relative;
+}
+

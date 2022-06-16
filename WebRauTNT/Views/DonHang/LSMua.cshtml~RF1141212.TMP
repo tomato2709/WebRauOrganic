@@ -1,0 +1,74 @@
+﻿@model WebRauTNT.Models.DonHang
+@{
+    ViewBag.Title = "LSMua";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@*@using WebRauTNT.Models.LinQ;
+    @{ AspNetUser kh = (AspNetUser)Session["TaiKhoan"]; }*@
+<section class="breadcrumb-section set-bg" data-setbg="/Content/img/breadcrumb.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="breadcrumb__text">
+                    <h2>Đơn hàng đã mua</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
+@*<div id="layoutSidenav_content">
+    <main>
+        <div class="container-fluid px-4">*@
+<div class="col-lg-12">
+    <h2 style="text-align: center; margin-bottom: 30px; margin-top: 20px; color: forestgreen">Đơn hàng đã mua</h2>
+
+    <table class="table table-bordered table-bordered">
+        <thead class="thead-default">
+            <tr>
+
+                <th>
+                    Ngày đặt
+                </th>
+                <th>
+                    Người nhận
+                </th>
+                <th>
+                    Số điện thoại
+                </th>
+                <th>
+                    Địa chỉ giao
+                </th>
+                <th>
+                    Tổng tiền
+                </th>
+
+                <th>
+                    Trạng thái giao hàng
+                </th>
+
+            </tr>
+        </thead>
+        <tbody class="table-bordered">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th>@item.NguoiNhan</th>
+                    <th>@item.SDTNguoiNhan</th>
+                    <th>@item.DiaChiGiaoHang</th>
+@*                    <th>@Model.chi</th>
+                    <th>@Model.</th>*@
+                    <th>12</th>
+                </tr>
+            }
+        </tbody>
+
+
+    </table>
+
+</div>
+@*        </div>
+        </main>
+    </div>*@
